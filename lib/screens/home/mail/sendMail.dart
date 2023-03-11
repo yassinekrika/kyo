@@ -3,14 +3,16 @@
 import 'package:flutter/material.dart';
 import 'package:kyo/screens/home/mail/viewMail.dart';
 
-class ReplyMail extends StatefulWidget {
-  const ReplyMail({super.key});
+class SendMail extends StatefulWidget {
+  const SendMail({super.key});
 
   @override
-  State<ReplyMail> createState() => _ReplyMailState();
+  State<SendMail> createState() => _SendMailState();
 }
 
-class _ReplyMailState extends State<ReplyMail> {
+class _SendMailState extends State<SendMail> {
+  var isLestening = false;
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -24,7 +26,7 @@ class _ReplyMailState extends State<ReplyMail> {
               child: AppBar(
                 centerTitle: true,
                 title: Text(
-                  "Reply",
+                  "Email",
                   style: TextStyle(
                       color: Color.fromARGB(255, 48, 71, 94), fontSize: 16.0),
                 ),
@@ -75,25 +77,55 @@ class _ReplyMailState extends State<ReplyMail> {
                       Expanded(
                         flex: 4,
                         child: Text(
-                          "Suggestion Response",
+                          "Write an email",
                           style: TextStyle(fontSize: 16),
                           textAlign: TextAlign.center,
                         ),
                       ),
-                      Expanded(child: Icon(Icons.edit))
+                      Expanded(
+                          child: SizedBox(
+                        width: 20,
+                      ))
                     ],
                   ),
                 ),
+                TextFormField(
+                  cursorColor: Color.fromARGB(255, 48, 71, 94),
+                  decoration: InputDecoration(
+                    labelText: 'To :',
+                    labelStyle: TextStyle(
+                      color: Color.fromARGB(255, 48, 71, 94),
+                    ),
+                    enabledBorder: UnderlineInputBorder(
+                      borderSide:
+                          BorderSide(color: Color.fromARGB(255, 48, 71, 94)),
+                    ),
+                  ),
+                ),
+                TextFormField(
+                  cursorColor: Color.fromARGB(255, 48, 71, 94),
+                  decoration: InputDecoration(
+                    labelText: 'Subject :',
+                    labelStyle: TextStyle(
+                      color: Color.fromARGB(255, 48, 71, 94),
+                    ),
+                    enabledBorder: UnderlineInputBorder(
+                      borderSide:
+                          BorderSide(color: Color.fromARGB(255, 48, 71, 94)),
+                    ),
+                  ),
+                ),
                 Expanded(
-                  flex: 3,
-                  child: Container(
-                    child: Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Center(
-                        child: Text(
-                          textAlign: TextAlign.center,
-                          "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
-                        ),
+                  flex: 1,
+                  child: TextFormField(
+                    maxLines: 100,
+                    minLines: 1,
+                    cursorColor: Color.fromARGB(255, 48, 71, 94),
+                    decoration: InputDecoration(
+                      border: InputBorder.none,
+                      labelText: 'Write here...',
+                      labelStyle: TextStyle(
+                        color: Color.fromARGB(255, 48, 71, 94),
                       ),
                     ),
                   ),
@@ -109,28 +141,41 @@ class _ReplyMailState extends State<ReplyMail> {
                       SizedBox(width: 10),
                       Icon(Icons.attachment),
                       SizedBox(width: 10),
-                      SizedBox(
-                        width: 80,
-                        height: 40,
-                        child: ElevatedButton(
-                          child: Text(
-                            "Send",
-                            style: TextStyle(
-                              fontSize: 14.0,
-                              color: Colors.white,
-                            ),
+                      GestureDetector(
+                        onTap: () {
+                          setState(() {
+                            isLestening = !isLestening;
+                          });
+                        },
+                        child: Container(
+                          height: 40,
+                          width: 40,
+                          decoration: BoxDecoration(
+                            color: Color.fromARGB(255, 48, 71, 94),
+                            borderRadius: BorderRadius.all(Radius.circular(10)),
                           ),
-                          style: ButtonStyle(
-                              backgroundColor: MaterialStateProperty.all(
-                                  Color.fromARGB(255, 48, 71, 94)),
-                              shape: MaterialStateProperty.all<
-                                      RoundedRectangleBorder>(
-                                  RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(10.0),
-                              ))),
-                          onPressed: () {
-                            Navigator.pushNamed(context, "/signup");
-                          },
+                          child: Icon(
+                            isLestening ? Icons.mic_none : Icons.mic,
+                            color: Colors.white,
+                            size: 21,
+                          ),
+                        ),
+                      ),
+                      SizedBox(width: 10),
+                      GestureDetector(
+                        onTap: () {},
+                        child: Container(
+                          height: 40,
+                          width: 40,
+                          decoration: BoxDecoration(
+                            color: Color.fromARGB(255, 48, 71, 94),
+                            borderRadius: BorderRadius.all(Radius.circular(10)),
+                          ),
+                          child: Icon(
+                            Icons.send,
+                            color: Colors.white,
+                            size: 21,
+                          ),
                         ),
                       ),
                     ],

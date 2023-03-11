@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:kyo/screens/home/mail/replyMail.dart';
+import 'package:kyo/screens/home/mail/sendMail.dart';
 
 class ViewMail extends StatefulWidget {
   const ViewMail({super.key});
@@ -117,7 +118,7 @@ class _ViewMailState extends State<ViewMail> {
                       onPressed: () {
                         Navigator.push(context,
                             MaterialPageRoute(builder: (context) {
-                          return ReplyMail();
+                          return SendMail();
                         }));
                       },
                     ),

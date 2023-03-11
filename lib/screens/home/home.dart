@@ -15,7 +15,7 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-  int myIndex = 1;
+  int myIndex = 2;
 
   List<Widget> widgetList = const [
     Chat(),
