@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "579160029928",
+    "firebase_url": "https://kyo-conseil-10ac0-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "kyo-conseil-10ac0",
+    "storage_bucket": "kyo-conseil-10ac0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:579160029928:android:e1a53e3cf1a0bab764675d",
+        "android_client_info": {
+          "package_name": "com.example.kyo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "579160029928-pnoiu7i676ngqh371b2j6a3pfgof2etb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAerrpxaSlW6E0ThocXzGbN6QkIiYYQJQk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "579160029928-km2r8a9nfua3v23qb8tjamqksiq155vb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

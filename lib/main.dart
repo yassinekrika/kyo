@@ -1,5 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:kyo/screens/home/chat/chat.dart';
 import 'package:kyo/screens/home/home.dart';
@@ -7,7 +9,11 @@ import 'package:kyo/screens/start/login.dart';
 import 'package:kyo/screens/start/signup.dart';
 import 'package:kyo/screens/start/welcome.dart';
 
-void main() {
+import 'package:firebase_core/firebase_core.dart';
+
+Future main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   runApp(const MyApp());
 }
 

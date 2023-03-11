@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors
+// ignore_for_file: prefer_const_constructors, sort_child_properties_last
 
 import 'package:flutter/material.dart';
 
@@ -26,7 +26,36 @@ class _ProfileState extends State<Profile> {
                 width: 160,
                 height: 160,
                 child: Image.asset('assets/images/image.jpg'),
-              )
+              ),
+              SizedBox(
+                height: 15,
+              ),
+              Text(
+                "Yassine KRIKA",
+                style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+              ),
+              SizedBox(
+                height: 15,
+              ),
+              Text(
+                "yassinekrika2016@gmail.com",
+                style: TextStyle(
+                    fontSize: 14,
+                    fontStyle: FontStyle.italic,
+                    fontWeight: FontWeight.w100),
+              ),
+              SizedBox(
+                height: 15,
+              ),
+              TextButton(
+                onPressed: () {
+                  // Respond to button press
+                },
+                child: Text("LOG OUT"),
+                style: TextButton.styleFrom(
+                    foregroundColor: Colors.red,
+                    textStyle: const TextStyle(fontSize: 20)),
+              ),
             ],
           ),
         ),
